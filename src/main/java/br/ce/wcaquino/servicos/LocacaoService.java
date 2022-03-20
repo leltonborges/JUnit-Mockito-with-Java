@@ -1,12 +1,10 @@
 package br.ce.wcaquino.servicos;
 
-import static br.ce.wcaquino.utils.DataUtils.adicionarDias;
-
-import java.util.Date;
-
 import br.ce.wcaquino.entidades.Filme;
 import br.ce.wcaquino.entidades.Locacao;
 import br.ce.wcaquino.entidades.Usuario;
+import static br.ce.wcaquino.utils.DataUtils.adicionarDias;
+import java.util.Date;
 
 public class LocacaoService {
 	
@@ -26,9 +24,5 @@ public class LocacaoService {
 		//TODO adicionar método para salvar
 		
 		return locacao;
-	}
-
-	public static void main(String[] args) {
-		
 	}
 }
