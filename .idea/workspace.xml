@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="eb4c8980-c511-419e-850d-30056c17dd58" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ce/wcaquino/entidades/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ce/wcaquino/entidades/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ce/wcaquino/servicos/LocacaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ce/wcaquino/servicos/LocacaoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/br/ce/wcaquino/servicos/LocacaoServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/ce/wcaquino/servicos/LocacaoServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/ce/wcaquino/entidades/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/ce/wcaquino/entidades/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/ce/wcaquino/servicos/LocacaoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/ce/wcaquino/servicos/LocacaoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/ce/wcaquino/servicos/CalculadoraTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/ce/wcaquino/servicos/CalculadoraTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/br/ce/wcaquino/servicos/LocacaoServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/br/ce/wcaquino/servicos/LocacaoServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,6 +65,10 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="br.ce.wcaquino.exception" />
+      <recent name="br.ce.wcaquino.servicos" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
@@ -76,8 +76,8 @@
       <recent name="br.ce.wcaquino.servicos" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LocacaoServiceTest">
-    <configuration name="LocacaoServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CalculadoraTest">
+    <configuration name="CalculadoraTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TestesUnitarios" />
       <extension name="coverage">
         <pattern>
@@ -86,13 +86,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="br.ce.wcaquino.servicos" />
-      <option name="MAIN_CLASS_NAME" value="br.ce.wcaquino.servicos.LocacaoServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="br.ce.wcaquino.servicos.CalculadoraTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LocacaoServiceTest.deveLancaExcencaoChecandoFilmeSemEstoque" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CalculadoraTest.deveDivisionDoisValores" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TestesUnitarios" />
       <extension name="coverage">
         <pattern>
@@ -101,14 +101,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="br.ce.wcaquino.servicos" />
-      <option name="MAIN_CLASS_NAME" value="br.ce.wcaquino.servicos.LocacaoServiceTest" />
-      <option name="METHOD_NAME" value="deveLancaExcencaoChecandoFilmeSemEstoque" />
+      <option name="MAIN_CLASS_NAME" value="br.ce.wcaquino.servicos.CalculadoraTest" />
+      <option name="METHOD_NAME" value="deveDivisionDoisValores" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LocacaoServiceTest.deveLancaExcencaoChecandoFilmeSemEstoque2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CalculadoraTest.deveLancaExecaoDivindoPorZeroDoisValores" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TestesUnitarios" />
       <extension name="coverage">
         <pattern>
@@ -117,14 +117,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="br.ce.wcaquino.servicos" />
-      <option name="MAIN_CLASS_NAME" value="br.ce.wcaquino.servicos.LocacaoServiceTest" />
-      <option name="METHOD_NAME" value="deveLancaExcencaoChecandoFilmeSemEstoque2" />
+      <option name="MAIN_CLASS_NAME" value="br.ce.wcaquino.servicos.CalculadoraTest" />
+      <option name="METHOD_NAME" value="deveLancaExecaoDivindoPorZeroDoisValores" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LocacaoServiceTest.deveLancaExcencaoChecandoFilmeSemEstoque3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CalculadoraTest.deveSomarDoisValores" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TestesUnitarios" />
       <extension name="coverage">
         <pattern>
@@ -133,14 +133,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="br.ce.wcaquino.servicos" />
-      <option name="MAIN_CLASS_NAME" value="br.ce.wcaquino.servicos.LocacaoServiceTest" />
-      <option name="METHOD_NAME" value="deveLancaExcencaoChecandoFilmeSemEstoque3" />
+      <option name="MAIN_CLASS_NAME" value="br.ce.wcaquino.servicos.CalculadoraTest" />
+      <option name="METHOD_NAME" value="deveSomarDoisValores" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LocacaoServiceTest.deveLancaExcencaoChecandoFilmeSemEstoque4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CalculadoraTest.deveSubtrairDoisValores" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TestesUnitarios" />
       <extension name="coverage">
         <pattern>
@@ -149,8 +149,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="br.ce.wcaquino.servicos" />
-      <option name="MAIN_CLASS_NAME" value="br.ce.wcaquino.servicos.LocacaoServiceTest" />
-      <option name="METHOD_NAME" value="deveLancaExcencaoChecandoFilmeSemEstoque4" />
+      <option name="MAIN_CLASS_NAME" value="br.ce.wcaquino.servicos.CalculadoraTest" />
+      <option name="METHOD_NAME" value="deveSubtrairDoisValores" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -158,11 +158,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LocacaoServiceTest" />
-        <item itemvalue="JUnit.LocacaoServiceTest.deveLancaExcencaoChecandoFilmeSemEstoque4" />
-        <item itemvalue="JUnit.LocacaoServiceTest.deveLancaExcencaoChecandoFilmeSemEstoque3" />
-        <item itemvalue="JUnit.LocacaoServiceTest.deveLancaExcencaoChecandoFilmeSemEstoque2" />
-        <item itemvalue="JUnit.LocacaoServiceTest.deveLancaExcencaoChecandoFilmeSemEstoque" />
+        <item itemvalue="JUnit.CalculadoraTest" />
+        <item itemvalue="JUnit.CalculadoraTest.deveLancaExecaoDivindoPorZeroDoisValores" />
+        <item itemvalue="JUnit.CalculadoraTest.deveDivisionDoisValores" />
+        <item itemvalue="JUnit.CalculadoraTest.deveSubtrairDoisValores" />
+        <item itemvalue="JUnit.CalculadoraTest.deveSomarDoisValores" />
       </list>
     </recent_temporary>
   </component>
@@ -175,7 +175,7 @@
       <option name="presentableId" value="Default" />
       <updated>1647745595779</updated>
       <workItem from="1647745598535" duration="557000" />
-      <workItem from="1647793273478" duration="11910000" />
+      <workItem from="1647793273478" duration="13704000" />
     </task>
     <servers />
   </component>
