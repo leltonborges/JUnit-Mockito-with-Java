@@ -4,12 +4,15 @@ import br.ce.wcaquino.entidades.Filme;
 import br.ce.wcaquino.entidades.Locacao;
 import br.ce.wcaquino.entidades.Usuario;
 import br.ce.wcaquino.matchers.DiaSemanaMatcher;
+import br.ce.wcaquino.matchers.MatcherProprios;
 import br.ce.wcaquino.utils.DataUtils;
 import org.junit.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.rules.ErrorCollector;
 import org.junit.rules.ExpectedException;
 import java.util.*;
+import static br.ce.wcaquino.matchers.MatcherProprios.caiEm;
+import static br.ce.wcaquino.matchers.MatcherProprios.caiNumaSegunda;
 import static br.ce.wcaquino.utils.DataUtils.isMesmaData;
 import static br.ce.wcaquino.utils.DataUtils.obterDataComDiferencaDias;
 import static org.hamcrest.CoreMatchers.*;
@@ -166,7 +169,8 @@ public class LocacaoServiceTest {
         boolean ehSegunda = DataUtils.verificarDiaSemana(locacao.getDataRetorno(), Calendar.MONDAY);
         assertTrue(ehSegunda);
         assertThat(locacao.getDataRetorno(), new DiaSemanaMatcher(Calendar.MONDAY));
-//        assertThat(locacao.getDataRetorno(), caiEm(Calendar.MONDAY));
-//        assertThat(locacao.getDataRetorno(), caiNumaSegundo());
+        assertThat(locacao.getDataRetorno(), caiEm(Calendar.MONDAY));
+        assertThat(locacao.getDataRetorno(), caiNumaSegunda());
+
     }
 }
