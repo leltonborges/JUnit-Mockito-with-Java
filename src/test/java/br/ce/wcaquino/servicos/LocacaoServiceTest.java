@@ -11,8 +11,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.rules.ErrorCollector;
 import org.junit.rules.ExpectedException;
 import java.util.*;
-import static br.ce.wcaquino.matchers.MatcherProprios.caiEm;
-import static br.ce.wcaquino.matchers.MatcherProprios.caiNumaSegunda;
+import static br.ce.wcaquino.matchers.MatcherProprios.*;
 import static br.ce.wcaquino.utils.DataUtils.isMesmaData;
 import static br.ce.wcaquino.utils.DataUtils.obterDataComDiferencaDias;
 import static org.hamcrest.CoreMatchers.*;
@@ -43,13 +42,14 @@ public class LocacaoServiceTest {
 
         assertEquals(3.0, locacao.getValor(), 0.01);
         assertTrue(isMesmaData(locacao.getDataLocacao(), new Date()));
+        assertThat(locacao.getDataLocacao(), ehHoje()); //custom
         assertTrue(isMesmaData(locacao.getDataRetorno(), obterDataComDiferencaDias(1)));
 
         assertThat(locacao.getValor(), is(3.0));
         assertThat(locacao.getValor(), is(equalTo(3.0)));
         assertThat(locacao.getValor(), is(not(6.0)));
         assertThat(isMesmaData(locacao.getDataRetorno(), obterDataComDiferencaDias(1)), is(true));
-        assertThat(isMesmaData(locacao.getDataLocacao(), new Date()), is(true));
+        assertThat(isMesmaData(locacao.getDataRetorno(), obterDataComDiferencaDias(1)), is(true));
 
 
         //roles
@@ -59,6 +59,8 @@ public class LocacaoServiceTest {
         error.checkThat(locacao.getValor(), is(not(6.0)));
         error.checkThat(isMesmaData(locacao.getDataRetorno(), obterDataComDiferencaDias(1)), is(true));
         error.checkThat(isMesmaData(locacao.getDataLocacao(), new Date()), is(true));
+        error.checkThat(locacao.getDataLocacao(), ehHoje());
+//        error.checkThat(locacao.getDataLocacao(), ehHojeComDiferenciaDeDias(1));
     }
 
     @Test(expected = RuntimeException.class)
