@@ -9,7 +9,12 @@ public class AplicarDescontos{
 
     public static List<Filme> aplicar(List<Filme> filmes){
         Desconto desconto =
-                new Desconto(new DescontoNoTerceiroFilme(new DescontoNoQuartoFilme(new DescontoNoQuintoFilme(null))));
+                new Desconto(
+                        new DescontoNoTerceiroFilme(
+                                new DescontoNoQuartoFilme(
+                                        new DescontoNoQuintoFilme(
+                                                new DescontoNoSextoFilme(null)
+                                        ))));
 
         desconto.execute(filmes);
         return desconto.getListWithDesconto();

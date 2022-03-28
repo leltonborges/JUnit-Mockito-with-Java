@@ -139,4 +139,20 @@ public class LocacaoServiceTest {
 
         assertThat(locacao.getValor(), is(35.0));
     }
+
+    @Test
+    public void devePagar50PctNoFilme6(){
+        Usuario user = new Usuario("User 1");
+        List<Filme> filmes = Arrays
+                .asList(new Filme("Filme 1", 4, 4.5),
+                        new Filme("Filme 2", 1, 15.5),
+                        new Filme("Filme 3", 4, 10.0),
+                        new Filme("Filme 4", 4, 10.0),
+                        new Filme("Filme 5", 4, 10.0),
+                        new Filme("Filme 6", 4, 10.0));
+
+        Locacao locacao = service.alugarFilme(user, filmes);
+
+        assertThat(locacao.getValor(), is(35.0));
+    }
 }
