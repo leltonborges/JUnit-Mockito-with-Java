@@ -11,8 +11,6 @@ n
 >src/main/java/br/ce/wcaquino/exception/NotDivisionForZero.java,a/b/ab850878ce4bead8026bbe986b24231c078eeae9
 a
 1src/main/java/br/ce/wcaquino/utils/DataUtils.java,3/c/3c5f056783538609b2efa990308edb58d0fc0397
-m
-=src/test/java/br/ce/wcaquino/servicos/LocacaoServiceTest.java,a/b/abb2a28bac150ae4d3c2643238650b00c847db92
 h
 8src/main/java/br/ce/wcaquino/utils/AplicarDescontos.java,c/6/c604747d3b7a3c82a05c906f8a0f8c14f4b4ca95
 l

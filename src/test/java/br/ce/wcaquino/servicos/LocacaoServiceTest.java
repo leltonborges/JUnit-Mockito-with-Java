@@ -3,6 +3,7 @@ package br.ce.wcaquino.servicos;
 import br.ce.wcaquino.entidades.Filme;
 import br.ce.wcaquino.entidades.Locacao;
 import br.ce.wcaquino.entidades.Usuario;
+import br.ce.wcaquino.matchers.DiaSemanaMatcher;
 import br.ce.wcaquino.utils.DataUtils;
 import org.junit.*;
 import org.junit.jupiter.api.DisplayName;
@@ -164,5 +165,8 @@ public class LocacaoServiceTest {
         Locacao locacao = service.alugarFilme(usuario, filmes);
         boolean ehSegunda = DataUtils.verificarDiaSemana(locacao.getDataRetorno(), Calendar.MONDAY);
         assertTrue(ehSegunda);
+        assertThat(locacao.getDataRetorno(), new DiaSemanaMatcher(Calendar.MONDAY));
+//        assertThat(locacao.getDataRetorno(), caiEm(Calendar.MONDAY));
+//        assertThat(locacao.getDataRetorno(), caiNumaSegundo());
     }
 }
