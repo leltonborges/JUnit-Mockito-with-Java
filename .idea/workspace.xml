@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb4c8980-c511-419e-850d-30056c17dd58" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ce/wcaquino/utils/DescontoNoQuartoFilme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ce/wcaquino/utils/DescontoNoQuartoFilme.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ce/wcaquino/utils/DescontoNoQuintoFilme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ce/wcaquino/utils/DescontoNoQuintoFilme.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ce/wcaquino/utils/DescontoNoSextoFilme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ce/wcaquino/utils/DescontoNoSextoFilme.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ce/wcaquino/utils/DescontoNoTerceiroFilme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ce/wcaquino/utils/DescontoNoTerceiroFilme.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/br/ce/wcaquino/servicos/LocacaoServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/ce/wcaquino/servicos/LocacaoServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/br/ce/wcaquino/servicos/LocacaoServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/br/ce/wcaquino/servicos/LocacaoServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/ce/wcaquino/servicos/CalcValorLotacaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/ce/wcaquino/servicos/CalcValorLotacaoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/br/ce/wcaquino/servicos/CalcValorLotacaoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/br/ce/wcaquino/servicos/CalcValorLotacaoTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../08-Alura/design-pattern-Java/.gradle/7.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../08-Alura/design-pattern-Java/.gradle/7.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../08-Alura/design-pattern-Java/.gradle/7.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../08-Alura/design-pattern-Java/.gradle/7.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../08-Alura/design-pattern-Java/.gradle/7.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../08-Alura/design-pattern-Java/.gradle/7.2/fileHashes/fileHashes.bin" afterDir="false" />
@@ -113,7 +110,7 @@
       <recent name="br.ce.wcaquino.utils" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CalcValorLotacaoTest.test">
+  <component name="RunManager" selected="JUnit.CalcValorLotacaoTest.deveCalcularValorLocacaoConsiderandoDescontos">
     <configuration name="CalcValorLotacaoTest.deveCalcularValorLocacaoConsiderandoDescontos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TestesUnitarios" />
       <extension name="coverage">
@@ -195,8 +192,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CalcValorLotacaoTest.test" />
         <item itemvalue="JUnit.CalcValorLotacaoTest.deveCalcularValorLocacaoConsiderandoDescontos" />
+        <item itemvalue="JUnit.CalcValorLotacaoTest.test" />
         <item itemvalue="JUnit.LocacaoServiceTest" />
         <item itemvalue="JUnit.LocacaoServiceTest.deveDevolverNaSegundaAoAlugarNoSabado" />
         <item itemvalue="JUnit.LocacaoServiceTest.naoDeveDevolverFilmeNoDomingo" />
@@ -227,7 +224,8 @@
       <workItem from="1648432557176" duration="21000" />
       <workItem from="1648432620363" duration="859000" />
       <workItem from="1648433543388" duration="4869000" />
-      <workItem from="1648465826484" duration="8249000" />
+      <workItem from="1648465826484" duration="9130000" />
+      <workItem from="1648490771407" duration="300000" />
     </task>
     <servers />
   </component>

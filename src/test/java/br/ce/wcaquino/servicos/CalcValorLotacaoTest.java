@@ -18,6 +18,8 @@ public class CalcValorLotacaoTest {
     public List<Filme> filmes;
     @Parameterized.Parameter(1)
     public Double valorLocacao;
+    @Parameterized.Parameter(2)
+    public String cenario;
 
     private Usuario usuario;
     private LocacaoService service;
@@ -28,15 +30,15 @@ public class CalcValorLotacaoTest {
         usuario = new Usuario("Usuário 1");
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Teste {index} = {2}")
     public static Collection<Object[]> getParametros() {
         return Arrays.asList(new Object[][]{
-                {Arrays.asList(new Filme("Filme 1", 2, 4.0), new Filme("Filme 2", 2, 4.0)), 8.0},
-                {Arrays.asList(new Filme("Filme 1", 2, 4.0), new Filme("Filme 2", 2, 4.0), new Filme("Filme 3", 2, 4.0)), 11.0},
-                {Arrays.asList(new Filme("Filme 1", 2, 4.0), new Filme("Filme 2", 2, 4.0), new Filme("Filme 3", 2, 4.0), new Filme("Filme 4", 2, 4.0)), 13.0},
-                {Arrays.asList(new Filme("Filme 1", 2, 4.0), new Filme("Filme 2", 2, 4.0), new Filme("Filme 3", 2, 4.0), new Filme("Filme 4", 2, 4.0), new Filme("Filme 5", 2, 4.0)), 14.0},
-                {Arrays.asList(new Filme("Filme 1", 2, 4.0), new Filme("Filme 2", 2, 4.0), new Filme("Filme 3", 2, 4.0), new Filme("Filme 4", 2, 4.0), new Filme("Filme 5", 2, 4.0), new Filme("Filme 6", 2, 4.0)), 14.0},
-                {Arrays.asList(new Filme("Filme 1", 2, 4.0), new Filme("Filme 2", 2, 4.0), new Filme("Filme 3", 2, 4.0), new Filme("Filme 4", 2, 4.0), new Filme("Filme 5", 2, 4.0), new Filme("Filme 6", 2, 4.0), new Filme("Filme 7", 2, 4.0)), 18.0},
+                {Arrays.asList(new Filme("Filme 1", 2, 4.0), new Filme("Filme 2", 2, 4.0)), 8.0, "Sem Descontos"},
+                {Arrays.asList(new Filme("Filme 1", 2, 4.0), new Filme("Filme 2", 2, 4.0), new Filme("Filme 3", 2, 4.0)), 11.0, "3 filmes: 25%"},
+                {Arrays.asList(new Filme("Filme 1", 2, 4.0), new Filme("Filme 2", 2, 4.0), new Filme("Filme 3", 2, 4.0), new Filme("Filme 4", 2, 4.0)), 13.0, "4 filmes: 50%"},
+                {Arrays.asList(new Filme("Filme 1", 2, 4.0), new Filme("Filme 2", 2, 4.0), new Filme("Filme 3", 2, 4.0), new Filme("Filme 4", 2, 4.0), new Filme("Filme 5", 2, 4.0)), 14.0, "5 filmes: 75%"},
+                {Arrays.asList(new Filme("Filme 1", 2, 4.0), new Filme("Filme 2", 2, 4.0), new Filme("Filme 3", 2, 4.0), new Filme("Filme 4", 2, 4.0), new Filme("Filme 5", 2, 4.0), new Filme("Filme 6", 2, 4.0)), 14.0, "6 filmes: 100%"},
+                {Arrays.asList(new Filme("Filme 1", 2, 4.0), new Filme("Filme 2", 2, 4.0), new Filme("Filme 3", 2, 4.0), new Filme("Filme 4", 2, 4.0), new Filme("Filme 5", 2, 4.0), new Filme("Filme 6", 2, 4.0), new Filme("Filme 7", 2, 4.0)), 18.0, "7 filmes: não se aplica"},
         });
     }
 
