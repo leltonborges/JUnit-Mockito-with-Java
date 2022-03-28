@@ -8,10 +8,7 @@ import org.junit.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.rules.ErrorCollector;
 import org.junit.rules.ExpectedException;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import static br.ce.wcaquino.utils.DataUtils.isMesmaData;
 import static br.ce.wcaquino.utils.DataUtils.obterDataComDiferencaDias;
 import static org.hamcrest.CoreMatchers.*;
@@ -63,7 +60,7 @@ public class LocacaoServiceTest {
     @Test(expected = RuntimeException.class)
     public void deveLancaExcencaoChecandoFilmeSemEstoque1() {
         //Exceptions
-        List<Filme> filme = Arrays.asList(new Filme("Filme 1", 0, 3.0));
+        List<Filme> filme = Collections.singletonList(new Filme("Filme 1", 0, 3.0));
 
         service.alugarFilme(usuario, filme);
     }
@@ -71,7 +68,7 @@ public class LocacaoServiceTest {
     @Test
     public void deveLancaExcencaoChecandoFilmeSemEstoque2() {
         //Exceptions
-        List<Filme> filme = Arrays.asList(new Filme("Filme 1", 0, 3.0));
+        List<Filme> filme = Collections.singletonList(new Filme("Filme 1", 0, 3.0));
         try {
             service.alugarFilme(usuario, filme);
             fail("Deveria ter lançado uma exceção");
@@ -82,18 +79,22 @@ public class LocacaoServiceTest {
 
     @Test
     public void deveLancaExcencaoChecandoFilmeSemEstoque3() {
+        //Cenario
         //Exceptions
-        List<Filme> filme2 = Arrays.asList(new Filme("Filme 1", 0, 3.0));
+        List<Filme> filme2 = Collections.singletonList(new Filme("Filme 1", 0, 3.0));
 
+        //Verificação
         exception.expect(RuntimeException.class);
         exception.expectMessage("Filme sem estoque");
+
+        //acao
         service.alugarFilme(usuario, filme2);
     }
 
     @Test
     public void deveLancaExcencaoChecandoFilmeSemEstoque4() {
         //Exceptions
-        List<Filme> filme = Arrays.asList(new Filme("Filme 1", 0, 3.0));
+        List<Filme> filme = Collections.singletonList(new Filme("Filme 1", 0, 3.0));
 
         assertThrows("erro exception", RuntimeException.class, () -> service.alugarFilme(usuario, filme));
     }

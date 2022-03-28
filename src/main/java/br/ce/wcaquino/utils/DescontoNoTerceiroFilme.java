@@ -10,7 +10,7 @@ public class DescontoNoTerceiroFilme extends Desconto {
     }
 
     @Override
-    public void execute(List<Filme> filmes) {
+    public void execute(final List<Filme> filmes) {
         if(filmes.size() > 2){
             double value = filmes.get(2).getPrecoLocacao()*0.75;
             filmes.get(2).setPrecoLocacao(value);
