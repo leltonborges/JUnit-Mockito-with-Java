@@ -16,4 +16,8 @@ public class Calculadora {
             throw new NotDivisionForZero("Não pode ser dividio por (0) zero");
         return num1 / num2;
     }
+
+    public void imprimir(){
+        System.out.println("passei aqui!!");
+    }
 }

@@ -1,6 +1,4 @@
 
-f
-6src/main/java/br/ce/wcaquino/servicos/Calculadora.java,f/2/f235c8c04fbd436fb81c071cb12c890bf4eda94c
 n
 >src/main/java/br/ce/wcaquino/exception/NotDivisionForZero.java,a/b/ab850878ce4bead8026bbe986b24231c078eeae9
 h
