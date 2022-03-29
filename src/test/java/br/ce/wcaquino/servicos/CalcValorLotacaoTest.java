@@ -26,13 +26,18 @@ public class CalcValorLotacaoTest {
     private Usuario usuario;
     private LocacaoService service;
     private LocacaoDao locacaoDao;
+    private SPCService spcService;
 
     @Before
     public void setup() {
         service = new LocacaoService();
         usuario = new Usuario("Usuário 1");
+
         locacaoDao = Mockito.mock(LocacaoDao.class);
+        spcService = Mockito.mock(SPCService.class);
+
         service.setLocacaoDao(locacaoDao);
+        service.setSpcService(spcService);
     }
 
     @Parameterized.Parameters(name = "Teste {index} = {2}")

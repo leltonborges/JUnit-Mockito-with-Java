@@ -1,6 +1,4 @@
 
-e
-5src/main/java/br/ce/wcaquino/servicos/AssertTest.java,5/e/5ef09be6a515e8778d22e8d4635407fc157cfd3b
 c
 3src/main/java/br/ce/wcaquino/entidades/Usuario.java,9/1/910ee5cb60168f033daea167d77ac003bb9f04df
 f
@@ -33,5 +31,3 @@ f
 6src/test/java/br/ce/wcaquino/suites/SuiteExecucao.java,f/c/fc0e991706d18c0de45f0be6a7d4fa6120ca6b40
 j
 :src/test/java/br/ce/wcaquino/servicos/CalculadoraTest.java,9/5/9522ab7b7a0fa56376f3c4ace2b84890d5357cce
-g
-7src/main/java/br/ce/wcaquino/builders/FilmeBuilder.java,4/8/48ae411da8c469495a4b2dc28f252c4d30cf9f45

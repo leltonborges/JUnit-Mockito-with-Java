@@ -1,9 +1,11 @@
 package br.ce.wcaquino.servicos;
 
+import br.ce.wcaquino.builders.FilmeBuilder;
 import br.ce.wcaquino.dao.LocacaoDao;
 import br.ce.wcaquino.entidades.Filme;
 import br.ce.wcaquino.entidades.Locacao;
 import br.ce.wcaquino.entidades.Usuario;
+import br.ce.wcaquino.exception.LocadoraException;
 import br.ce.wcaquino.matchers.DiaSemanaMatcher;
 import br.ce.wcaquino.utils.DataUtils;
 import org.junit.Assume;
@@ -22,11 +24,13 @@ import static br.ce.wcaquino.utils.DataUtils.isMesmaData;
 import static br.ce.wcaquino.utils.DataUtils.obterDataComDiferencaDias;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.when;
 
 public class LocacaoServiceTest {
     private LocacaoService service;
     private Usuario usuario;
     private LocacaoDao locacaoDao;
+    private SPCService spcService;
 
     @Rule
     public ErrorCollector error = new ErrorCollector();
@@ -38,8 +42,12 @@ public class LocacaoServiceTest {
     public void setup(){
         service = new LocacaoService();
         usuario = umUsuario().build();
+
         locacaoDao = Mockito.mock(LocacaoDao.class);
+        spcService = Mockito.mock(SPCService.class);
+
         service.setLocacaoDao(locacaoDao);
+        service.setSpcService(spcService);
     }
 
     @Test
@@ -183,5 +191,17 @@ public class LocacaoServiceTest {
         assertThat(locacao.getDataRetorno(), caiEm(Calendar.MONDAY));
         assertThat(locacao.getDataRetorno(), caiNumaSegunda());
 
+    }
+
+    @Test
+    public void naoDeveAludarFilmeParaNegativadoSPC(){
+
+        List<Filme> filmes = Collections.singletonList(filmeBuilder().build());
+
+        when(spcService.possuiNegativacao(usuario)).thenReturn(true);
+        exception.expect(LocadoraException.class);
+        exception.expectMessage("Usuário negativado");
+        //Ação
+        service.alugarFilme(usuario, filmes);
     }
 }
