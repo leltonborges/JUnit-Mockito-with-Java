@@ -16,6 +16,7 @@ public class LocacaoService {
 
     private LocacaoDao locacaoDao;
     private SPCService spcService;
+    private EmailService emailService;
 
     public Locacao alugarFilme(Usuario usuario, List<Filme> filmes) {
         if (filmes.stream().anyMatch(f -> f.getEstoque() == 0)) {
@@ -45,11 +46,22 @@ public class LocacaoService {
         return locacao;
     }
 
+    public void notificarAtrasos(){
+        List<Locacao> locacaos = locacaoDao.obterLocacoesPendentes();
+        locacaos.stream()
+                .filter(l -> l.getDataRetorno().before(new Date()))
+                .forEach(l -> emailService.notificarAtraso(l.getUsuario()));
+    }
+
     public void setLocacaoDao(LocacaoDao locacaoDao) {
         this.locacaoDao = locacaoDao;
     }
 
     public void setSpcService(SPCService spcService) {
         this.spcService = spcService;
+    }
+
+    public void setEmailService(EmailService emailService) {
+        this.emailService = emailService;
     }
 }

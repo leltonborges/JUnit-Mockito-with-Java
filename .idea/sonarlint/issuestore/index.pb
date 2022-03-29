@@ -1,6 +1,4 @@
 
-c
-3src/main/java/br/ce/wcaquino/entidades/Usuario.java,9/1/910ee5cb60168f033daea167d77ac003bb9f04df
 f
 6src/main/java/br/ce/wcaquino/servicos/Calculadora.java,f/2/f235c8c04fbd436fb81c071cb12c890bf4eda94c
 n
@@ -31,3 +29,23 @@ f
 6src/test/java/br/ce/wcaquino/suites/SuiteExecucao.java,f/c/fc0e991706d18c0de45f0be6a7d4fa6120ca6b40
 j
 :src/test/java/br/ce/wcaquino/servicos/CalculadoraTest.java,9/5/9522ab7b7a0fa56376f3c4ace2b84890d5357cce
+7
+pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
+m
+=src/main/java/br/ce/wcaquino/exception/LocadoraException.java,8/7/87daccd5ab369ee808b1e404d2e215e92e47a55a
+e
+5src/test/java/br/ce/wcaquino/servicos/AssertTest.java,9/e/9e4f15080fda002c7420c40c133337804031b569
+e
+5src/main/java/br/ce/wcaquino/servicos/SPCService.java,e/7/e7adccfd9462be91ede5facfb7e2f29c69aeedeb
+o
+?src/test/java/br/ce/wcaquino/servicos/CalcValorLotacaoTest.java,e/1/e179678cfd7514228c260b5b4371f8b4877a04cc
+g
+7src/main/java/br/ce/wcaquino/builders/FilmeBuilder.java,4/8/48ae411da8c469495a4b2dc28f252c4d30cf9f45
+`
+0src/main/java/br/ce/wcaquino/dao/LocacaoDao.java,3/f/3ff132b3858bc49cb74043aed905338454520ddb
+g
+7src/main/java/br/ce/wcaquino/servicos/EmailService.java,e/a/ea632b81df435fbcf923616f6acd73e01e8f0ad2
+i
+9src/main/java/br/ce/wcaquino/builders/UsuarioBuilder.java,d/e/defd13bdb9b4133ba93f7c68dd71ffac074643ad
+i
+9src/main/java/br/ce/wcaquino/builders/LocacaoBuilder.java,a/d/ad84bee6d0363210b50ed0a0c935695ca5395004
