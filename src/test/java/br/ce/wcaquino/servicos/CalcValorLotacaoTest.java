@@ -4,10 +4,12 @@ import br.ce.wcaquino.dao.LocacaoDao;
 import br.ce.wcaquino.entidades.Filme;
 import br.ce.wcaquino.entidades.Locacao;
 import br.ce.wcaquino.entidades.Usuario;
-import org.junit.*;
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.mockito.Mockito;
+import org.mockito.*;
+import org.mockito.MockitoAnnotations;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -24,20 +26,25 @@ public class CalcValorLotacaoTest {
     public String cenario;
 
     private Usuario usuario;
+
+    @InjectMocks
     private LocacaoService service;
-    private LocacaoDao locacaoDao;
-    private SPCService spcService;
+
+    @Mock
+    private LocacaoDao dao;
+
+    @Mock
+    private SPCService spc;
 
     @Before
-    public void setup() {
-        service = new LocacaoService();
+    public void setup(){
+        MockitoAnnotations.initMocks(this);
         usuario = new Usuario("Usuário 1");
 
-        locacaoDao = Mockito.mock(LocacaoDao.class);
-        spcService = Mockito.mock(SPCService.class);
-
-        service.setLocacaoDao(locacaoDao);
-        service.setSpcService(spcService);
+//        locacaoDao = Mockito.mock(LocacaoDao.class);
+//        spcService = Mockito.mock(SPCService.class);
+//        service.setLocacaoDao(locacaoDao);
+//        service.setSpcService(spcService);
     }
 
     @Parameterized.Parameters(name = "Teste {index} = {2}")

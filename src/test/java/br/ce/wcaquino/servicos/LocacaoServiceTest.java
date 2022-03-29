@@ -1,7 +1,5 @@
 package br.ce.wcaquino.servicos;
 
-import br.ce.wcaquino.builders.FilmeBuilder;
-import br.ce.wcaquino.builders.LocacaoBuilder;
 import br.ce.wcaquino.dao.LocacaoDao;
 import br.ce.wcaquino.entidades.Filme;
 import br.ce.wcaquino.entidades.Locacao;
@@ -16,7 +14,10 @@ import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.rules.ErrorCollector;
 import org.junit.rules.ExpectedException;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
 import java.util.*;
 import static br.ce.wcaquino.builders.FilmeBuilder.filmeBuilder;
 import static br.ce.wcaquino.builders.LocacaoBuilder.create;
@@ -29,11 +30,16 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 public class LocacaoServiceTest {
+    @InjectMocks
     private LocacaoService service;
-    private Usuario usuario;
-    private LocacaoDao locacaoDao;
-    private SPCService spcService;
+    @Mock
+    private LocacaoDao dao;
+    @Mock
+    private SPCService spc;
+    @Mock
     private EmailService emailService;
+
+    private Usuario usuario;
 
     @Rule
     public ErrorCollector error = new ErrorCollector();
@@ -43,16 +49,8 @@ public class LocacaoServiceTest {
 
     @Before
     public void setup() {
-        service = new LocacaoService();
+        MockitoAnnotations.initMocks(this);
         usuario = umUsuario().build();
-
-        locacaoDao = Mockito.mock(LocacaoDao.class);
-        spcService = Mockito.mock(SPCService.class);
-        emailService = mock(EmailService.class);
-
-        service.setLocacaoDao(locacaoDao);
-        service.setSpcService(spcService);
-        service.setEmailService(emailService);
     }
 
     @Test
@@ -203,7 +201,7 @@ public class LocacaoServiceTest {
         //Cenario
         List<Filme> filmes = Collections.singletonList(filmeBuilder().build());
 
-        when(spcService.possuiNegativacao(usuario)).thenReturn(true);
+        when(spc.possuiNegativacao(usuario)).thenReturn(true);
 
 //        exception.expect(LocadoraException.class);
 //        exception.expectMessage("Usuário negativado");
@@ -217,7 +215,7 @@ public class LocacaoServiceTest {
         }
 
         //verificacao
-        verify(spcService).possuiNegativacao(usuario);
+        verify(spc).possuiNegativacao(usuario);
     }
 
     @Test
@@ -235,7 +233,7 @@ public class LocacaoServiceTest {
                 create().umaLocacao().comUsuario(usuario3).comDataRetorno(obterDataComDiferencaDias(-4)).build(),
                 create().umaLocacao().comUsuario(usuario3).comDataRetorno(obterDataComDiferencaDias(-4)).build());
         //ação
-        when(locacaoDao.obterLocacoesPendentes()).thenReturn(locacaos);
+        when(dao.obterLocacoesPendentes()).thenReturn(locacaos);
         service.notificarAtrasos();
 
         //Verificação
