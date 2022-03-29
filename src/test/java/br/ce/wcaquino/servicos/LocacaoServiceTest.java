@@ -1,5 +1,6 @@
 package br.ce.wcaquino.servicos;
 
+import br.ce.wcaquino.dao.LocacaoDao;
 import br.ce.wcaquino.entidades.Filme;
 import br.ce.wcaquino.entidades.Locacao;
 import br.ce.wcaquino.entidades.Usuario;
@@ -12,6 +13,7 @@ import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.rules.ErrorCollector;
 import org.junit.rules.ExpectedException;
+import org.mockito.Mockito;
 import java.util.*;
 import static br.ce.wcaquino.builders.FilmeBuilder.filmeBuilder;
 import static br.ce.wcaquino.builders.UsuarioBuilder.umUsuario;
@@ -24,6 +26,7 @@ import static org.junit.Assert.*;
 public class LocacaoServiceTest {
     private LocacaoService service;
     private Usuario usuario;
+    private LocacaoDao locacaoDao;
 
     @Rule
     public ErrorCollector error = new ErrorCollector();
@@ -35,6 +38,8 @@ public class LocacaoServiceTest {
     public void setup(){
         service = new LocacaoService();
         usuario = umUsuario().build();
+        locacaoDao = Mockito.mock(LocacaoDao.class);
+        service.setLocacaoDao(locacaoDao);
     }
 
     @Test

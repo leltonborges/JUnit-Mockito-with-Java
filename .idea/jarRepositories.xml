@@ -2,9 +2,19 @@
 <project version="4">
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
+      <option name="id" value="nexus_sicoob_releases" />
+      <option name="name" value="nexus_sicoob_releases" />
+      <option name="url" value="http://nexus.sicoob.com.br/repository/maven-public/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Central Repository" />
       <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="MavenRepo" />
+      <option name="name" value="MavenRepo" />
+      <option name="url" value="https://repo.maven.apache.org/maven2/" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="central" />
@@ -17,9 +27,24 @@
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
     </remote-repository>
     <remote-repository>
-      <option name="id" value="MavenRepo" />
-      <option name="name" value="MavenRepo" />
-      <option name="url" value="https://repo.maven.apache.org/maven2/" />
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="http://ic.cabal.com.br/nexus/content/groups/public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="nexus_cabal" />
+      <option name="name" value="nexus_cabal" />
+      <option name="url" value="http://ic.cabal.com.br/nexus/content/groups/public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="nexus_sicoob_snapshots" />
+      <option name="name" value="nexus_sicoob_snapshots" />
+      <option name="url" value="http://ic.cabal.com.br/nexus/content/groups/public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jasper" />
+      <option name="name" value="jasper" />
+      <option name="url" value="http://ic.cabal.com.br/nexus/content/groups/public" />
     </remote-repository>
   </component>
 </project>

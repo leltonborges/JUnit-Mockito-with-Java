@@ -1,5 +1,6 @@
 package br.ce.wcaquino.servicos;
 
+import br.ce.wcaquino.dao.LocacaoDao;
 import br.ce.wcaquino.entidades.Filme;
 import br.ce.wcaquino.entidades.Locacao;
 import br.ce.wcaquino.entidades.Usuario;
@@ -11,6 +12,8 @@ import java.util.List;
 import static br.ce.wcaquino.utils.DataUtils.adicionarDias;
 
 public class LocacaoService {
+
+    private LocacaoDao locacaoDao;
 
     public Locacao alugarFilme(Usuario usuario, List<Filme> filmes) {
         if (filmes.stream().anyMatch(f -> f.getEstoque() == 0)) {
@@ -31,8 +34,12 @@ public class LocacaoService {
         locacao.setDataRetorno(dataEntrega);
 
         //Salvando a locacao...	
-        //TODO adicionar método para salvar
+        locacaoDao.salvar(locacao);
 
         return locacao;
+    }
+
+    public void setLocacaoDao(LocacaoDao locacaoDao) {
+        this.locacaoDao = locacaoDao;
     }
 }

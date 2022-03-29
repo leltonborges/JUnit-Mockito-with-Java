@@ -1,11 +1,13 @@
 package br.ce.wcaquino.servicos;
 
+import br.ce.wcaquino.dao.LocacaoDao;
 import br.ce.wcaquino.entidades.Filme;
 import br.ce.wcaquino.entidades.Locacao;
 import br.ce.wcaquino.entidades.Usuario;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.mockito.Mockito;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -23,11 +25,14 @@ public class CalcValorLotacaoTest {
 
     private Usuario usuario;
     private LocacaoService service;
+    private LocacaoDao locacaoDao;
 
     @Before
     public void setup() {
         service = new LocacaoService();
         usuario = new Usuario("Usuário 1");
+        locacaoDao = Mockito.mock(LocacaoDao.class);
+        service.setLocacaoDao(locacaoDao);
     }
 
     @Parameterized.Parameters(name = "Teste {index} = {2}")

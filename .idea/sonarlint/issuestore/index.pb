@@ -1,6 +1,4 @@
 
-7
-pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
 e
 5src/main/java/br/ce/wcaquino/servicos/AssertTest.java,5/e/5ef09be6a515e8778d22e8d4635407fc157cfd3b
 c
@@ -21,3 +19,19 @@ o
 ?src/main/java/br/ce/wcaquino/utils/DescontoNoTerceiroFilme.java,1/5/15ac55ffcb266017eae84f0b6272d4f77cb9fe65
 `
 0src/main/java/br/ce/wcaquino/utils/Desconto.java,1/f/1fb3a7fdb4f272d395ed7e48c32c0db0e8489a6f
+a
+1src/main/java/br/ce/wcaquino/entidades/Filme.java,a/c/ace9517f75ecc9999dfdd5c4bdabc9b998b07e8d
+j
+:src/test/java/br/ce/wcaquino/matchers/MatcherProprios.java,f/b/fbc06d69e381d47bc9ac6680f300f2d0728db2e4
+a
+1src/main/java/br/ce/wcaquino/utils/DataUtils.java,3/c/3c5f056783538609b2efa990308edb58d0fc0397
+e
+5src/test/java/br/ce/wcaquino/matchers/DiaMatcher.java,2/b/2b190c524971c8ab340745a649ceab4d11038d2a
+k
+;src/test/java/br/ce/wcaquino/matchers/DiaSemanaMatcher.java,1/b/1baab12873c921fed3ec9996cae08bb37d0a7327
+f
+6src/test/java/br/ce/wcaquino/suites/SuiteExecucao.java,f/c/fc0e991706d18c0de45f0be6a7d4fa6120ca6b40
+j
+:src/test/java/br/ce/wcaquino/servicos/CalculadoraTest.java,9/5/9522ab7b7a0fa56376f3c4ace2b84890d5357cce
+g
+7src/main/java/br/ce/wcaquino/builders/FilmeBuilder.java,4/8/48ae411da8c469495a4b2dc28f252c4d30cf9f45
