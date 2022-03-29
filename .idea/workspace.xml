@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="eb4c8980-c511-419e-850d-30056c17dd58" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/br/ce/wcaquino/servicos/CalculadoraTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/ce/wcaquino/servicos/CalculadoraTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/br/ce/wcaquino/servicos/LocacaoServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/ce/wcaquino/servicos/LocacaoServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/br/ce/wcaquino/servicos/CalculadoraTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/br/ce/wcaquino/servicos/CalculadoraTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/br/ce/wcaquino/servicos/LocacaoServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/br/ce/wcaquino/servicos/LocacaoServiceTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../08-Alura/design-pattern-Java/.gradle/7.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../08-Alura/design-pattern-Java/.gradle/7.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../08-Alura/design-pattern-Java/.gradle/7.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../08-Alura/design-pattern-Java/.gradle/7.2/executionHistory/executionHistory.lock" afterDir="false" />
@@ -111,7 +109,7 @@
       <recent name="br.ce.wcaquino.utils" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SuiteExecucao">
+  <component name="RunManager" selected="JUnit.LocacaoServiceTest">
     <configuration name="CalcValorLotacaoTest.deveCalcularValorLocacaoConsiderandoDescontos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TestesUnitarios" />
       <extension name="coverage">
@@ -192,8 +190,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SuiteExecucao" />
         <item itemvalue="JUnit.LocacaoServiceTest" />
+        <item itemvalue="JUnit.SuiteExecucao" />
         <item itemvalue="JUnit.LocacaoServiceTest.deveAlugarFilmeComSucesso" />
         <item itemvalue="JUnit.LocacaoServiceTest.deveDevolverNaSegundaAoAlugarNoSabado" />
         <item itemvalue="JUnit.CalcValorLotacaoTest.deveCalcularValorLocacaoConsiderandoDescontos" />
@@ -225,7 +223,7 @@
       <workItem from="1648432620363" duration="859000" />
       <workItem from="1648433543388" duration="4869000" />
       <workItem from="1648465826484" duration="9130000" />
-      <workItem from="1648490771407" duration="6100000" />
+      <workItem from="1648490771407" duration="7823000" />
     </task>
     <servers />
   </component>

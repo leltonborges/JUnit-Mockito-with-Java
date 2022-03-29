@@ -13,6 +13,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.rules.ErrorCollector;
 import org.junit.rules.ExpectedException;
 import java.util.*;
+import static br.ce.wcaquino.builders.FilmeBuilder.filmeBuilder;
+import static br.ce.wcaquino.builders.UsuarioBuilder.umUsuario;
 import static br.ce.wcaquino.matchers.MatcherProprios.*;
 import static br.ce.wcaquino.utils.DataUtils.isMesmaData;
 import static br.ce.wcaquino.utils.DataUtils.obterDataComDiferencaDias;
@@ -32,14 +34,14 @@ public class LocacaoServiceTest {
     @Before
     public void setup(){
         service = new LocacaoService();
-        usuario = new Usuario("Usuário 1");
+        usuario = umUsuario().build();
     }
 
     @Test
     public void deveAlugarFilmeComSucesso() {
         Assume.assumeFalse(DataUtils.verificarDiaSemana(new Date(), Calendar.SATURDAY));
 
-        List<Filme> filme = Arrays.asList(new Filme("Filme 1", 5, 3.0));
+        List<Filme> filme = Arrays.asList(filmeBuilder().build());
         Locacao locacao = service.alugarFilme(usuario, filme);
 
         assertEquals(3.0, locacao.getValor(), 0.01);
@@ -68,7 +70,7 @@ public class LocacaoServiceTest {
     @Test(expected = RuntimeException.class)
     public void deveLancaExcencaoChecandoFilmeSemEstoque1() {
         //Exceptions
-        List<Filme> filme = Collections.singletonList(new Filme("Filme 1", 0, 3.0));
+        List<Filme> filme = Collections.singletonList(filmeBuilder().semEstoque().build());
 
         service.alugarFilme(usuario, filme);
     }
@@ -76,7 +78,7 @@ public class LocacaoServiceTest {
     @Test
     public void deveLancaExcencaoChecandoFilmeSemEstoque2() {
         //Exceptions
-        List<Filme> filme = Collections.singletonList(new Filme("Filme 1", 0, 3.0));
+        List<Filme> filme = Collections.singletonList(filmeBuilder().semEstoque().build());
         try {
             service.alugarFilme(usuario, filme);
             fail("Deveria ter lançado uma exceção");
@@ -89,7 +91,7 @@ public class LocacaoServiceTest {
     public void deveLancaExcencaoChecandoFilmeSemEstoque3() {
         //Cenario
         //Exceptions
-        List<Filme> filme2 = Collections.singletonList(new Filme("Filme 1", 0, 3.0));
+        List<Filme> filme2 = Collections.singletonList(filmeBuilder().semEstoque().build());
 
         //Verificação
         exception.expect(RuntimeException.class);
@@ -102,7 +104,7 @@ public class LocacaoServiceTest {
     @Test
     public void deveLancaExcencaoChecandoFilmeSemEstoque4() {
         //Exceptions
-        List<Filme> filme = Collections.singletonList(new Filme("Filme 1", 0, 3.0));
+        List<Filme> filme = Collections.singletonList(filmeBuilder().semEstoque().build());
 
         assertThrows("erro exception", RuntimeException.class, () -> service.alugarFilme(usuario, filme));
     }
