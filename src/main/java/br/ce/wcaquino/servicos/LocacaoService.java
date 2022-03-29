@@ -23,7 +23,14 @@ public class LocacaoService {
             throw new RuntimeException("Filme sem estoque");
         }
 
-        if(spcService.possuiNegativacao(usuario)){
+        boolean negativado;
+
+        try {
+            negativado = spcService.possuiNegativacao(usuario);
+        } catch (Exception e) {
+            throw new LocadoraException("Problemas com SPC, tente novamente!");
+        }
+        if (negativado) {
             throw new LocadoraException("Usuário negativado");
         }
         Locacao locacao = new Locacao();
@@ -36,8 +43,8 @@ public class LocacaoService {
         //Entrega no dia seguinte
         Date dataEntrega = new Date();
         dataEntrega = adicionarDias(dataEntrega, 1);
-        if(DataUtils.verificarDiaSemana(dataEntrega, Calendar.SUNDAY))
-            dataEntrega= adicionarDias(dataEntrega, 1);
+        if (DataUtils.verificarDiaSemana(dataEntrega, Calendar.SUNDAY))
+            dataEntrega = adicionarDias(dataEntrega, 1);
         locacao.setDataRetorno(dataEntrega);
 
         //Salvando a locacao...	
@@ -46,11 +53,22 @@ public class LocacaoService {
         return locacao;
     }
 
-    public void notificarAtrasos(){
+    public void notificarAtrasos() {
         List<Locacao> locacaos = locacaoDao.obterLocacoesPendentes();
         locacaos.stream()
                 .filter(l -> l.getDataRetorno().before(new Date()))
                 .forEach(l -> emailService.notificarAtraso(l.getUsuario()));
+    }
+
+    public void prorrogarLocacao(Locacao locacao, int dias){
+        Locacao novaLocacao = new Locacao();
+        novaLocacao.setUsuario(locacao.getUsuario());
+        novaLocacao.setFilme(locacao.getFilme());
+        novaLocacao.setDataLocacao(new Date());
+        novaLocacao.setDataRetorno(DataUtils.obterDataComDiferencaDias(dias));
+        novaLocacao.setValor(locacao.getValor() * dias);
+
+        locacaoDao.salvar(novaLocacao);
     }
 
 }

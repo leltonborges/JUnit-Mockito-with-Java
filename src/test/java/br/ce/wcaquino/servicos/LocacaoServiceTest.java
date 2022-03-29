@@ -14,10 +14,7 @@ import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.rules.ErrorCollector;
 import org.junit.rules.ExpectedException;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
+import org.mockito.*;
 import java.util.*;
 import static br.ce.wcaquino.builders.FilmeBuilder.filmeBuilder;
 import static br.ce.wcaquino.builders.LocacaoBuilder.create;
@@ -197,7 +194,7 @@ public class LocacaoServiceTest {
     }
 
     @Test
-    public void naoDeveAludarFilmeParaNegativadoSPC() {
+    public void naoDeveAludarFilmeParaNegativadoSPC() throws Exception {
         //Cenario
         List<Filme> filmes = Collections.singletonList(filmeBuilder().build());
 
@@ -241,5 +238,42 @@ public class LocacaoServiceTest {
         verify(emailService, Mockito.atLeastOnce()).notificarAtraso(usuario3);
         verify(emailService, never()).notificarAtraso(usuario2);
         verifyNoMoreInteractions(emailService);
+    }
+
+    @Test
+    public void deveTrataErroNoSPC() throws Exception {
+        //Cenario
+        Filme filme = filmeBuilder().build();
+
+        //Expectativa
+        when(spc.possuiNegativacao(usuario)).thenThrow(new Exception("Falha provocada"));
+        exception.expect(LocadoraException.class);
+        exception.expectMessage("Problemas com SPC, tente novamente!");
+
+        // Ação
+        service.alugarFilme(usuario, Collections.singletonList(filme));
+
+        //Verificação
+    }
+
+    @Test
+    public void deveProrrogarUmaLocacao() {
+        //Cenario
+        Locacao locacao = create().build();
+        int dias = 3;
+
+        //Ação
+        service.prorrogarLocacao(locacao, dias);
+
+        //Verificação
+        ArgumentCaptor<Locacao> locacaoArgumentCaptor = ArgumentCaptor.forClass(Locacao.class);
+
+        verify(dao).salvar(locacaoArgumentCaptor.capture());
+        Locacao locacaoRetorno = locacaoArgumentCaptor.getValue();
+
+        double value = locacao.getValor() * dias;
+        error.checkThat(locacaoRetorno.getValor(), is(value));
+        error.checkThat(locacaoRetorno.getDataLocacao(), ehHoje());
+        error.checkThat(locacaoRetorno.getDataRetorno(), ehHojeComDiferenciaDeDias(dias));
     }
 }
