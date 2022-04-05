@@ -14,7 +14,12 @@ import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.rules.ErrorCollector;
 import org.junit.rules.ExpectedException;
-import org.mockito.*;
+import org.junit.runner.RunWith;
+import org.mockito.ArgumentCaptor;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
 import java.util.*;
 import static br.ce.wcaquino.builders.FilmeBuilder.filmeBuilder;
 import static br.ce.wcaquino.builders.LocacaoBuilder.create;
@@ -26,6 +31,7 @@ import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
+@RunWith(MockitoJUnitRunner.class)
 public class LocacaoServiceTest {
     @InjectMocks
     private LocacaoService service;
@@ -46,7 +52,7 @@ public class LocacaoServiceTest {
 
     @Before
     public void setup() {
-        MockitoAnnotations.initMocks(this);
+//        MockitoAnnotations.initMocks(this);
         usuario = umUsuario().build();
     }
 
