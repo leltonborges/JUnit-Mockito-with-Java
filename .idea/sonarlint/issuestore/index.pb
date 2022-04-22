@@ -35,3 +35,7 @@ i
 9src/main/java/br/ce/wcaquino/builders/UsuarioBuilder.java,d/e/defd13bdb9b4133ba93f7c68dd71ffac074643ad
 c
 3src/main/java/br/ce/wcaquino/entidades/Usuario.java,9/1/910ee5cb60168f033daea167d77ac003bb9f04df
+m
+=src/test/java/br/ce/wcaquino/servicos/LocacaoServiceTest.java,a/b/abb2a28bac150ae4d3c2643238650b00c847db92
+7
+pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
